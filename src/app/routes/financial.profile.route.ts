@@ -12,6 +12,7 @@ const router = express.Router();
 router
 
   .get('/', auth(), financialProfileController.getSingleFinancialProfile)
+  .get('/predict', auth(), financialProfileController.predictFinancialProfile)
   .post(
     '/',
     auth(),

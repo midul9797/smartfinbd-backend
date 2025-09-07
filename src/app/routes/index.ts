@@ -5,6 +5,7 @@ import { UserRoute } from './user.route';
 import { PreferencesRoutes } from './preferences.route';
 import { InvestmentRoutes } from './investment.route';
 import { RiskAssessmentRoutes } from './risk.assessment.route';
+import { ChatRoute } from './chat.route';
 
 const router = express.Router(); // Create a new express router
 
@@ -29,6 +30,10 @@ const moduleRoutes = [
   {
     path: '/investment',
     route: InvestmentRoutes,
+  },
+  {
+    path: '/chat',
+    route: ChatRoute,
   },
   {
     path: '/risk-assessment',

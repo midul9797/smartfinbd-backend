@@ -10,4 +10,7 @@ export default {
     secret: process.env.JWT_SECRET,
     expires_in: process.env.JWT_EXPIRES_IN,
   },
+  gemini: {
+    api_key: process.env.GEMINI_API_KEY,
+  },
 };

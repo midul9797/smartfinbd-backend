@@ -56,10 +56,24 @@ const updateFinancialProfile = catchAsync(
     });
   },
 );
+const predictFinancialProfile = catchAsync(
+  async (req: Request, res: Response) => {
+    const { userId } = req.user as JwtPayload;
+    const result =
+      await FinancialProfileServices.predictFinancialProfile(userId);
 
+    sendResponse(res, {
+      statusCode: 200,
+      success: true,
+      message: 'Financial profile predicted succesfully',
+      data: result,
+    });
+  },
+);
 // Export the student controller functions
 export const financialProfileController = {
   createFinancialProfile,
   getSingleFinancialProfile,
   updateFinancialProfile,
+  predictFinancialProfile,
 };
